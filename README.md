@@ -1,4 +1,4 @@
-# Muhammad Umar Zafar
+# Umar Zafar
 
 I am an AI policy researcher, geopolitical analyst, and nonprofit founder
 building source-auditable research tools and public-interest technology.
