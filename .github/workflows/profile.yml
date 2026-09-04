@@ -1,0 +1,31 @@
+name: Profile
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate profile links
+        shell: bash
+        run: |
+          set -euo pipefail
+          for repository_name in \
+            PakTechPolicy \
+            testing-ai-geolocation-hypothesis \
+            signbridge-overlay \
+            meowmeow-atlas \
+            rock-to-rack \
+            RDL; do
+            grep -Fq "https://github.com/Omarzaf/${repository_name}" README.md
+          done
+          grep -Fq "https://www.linkedin.com/in/umarzafar1" README.md
